@@ -1,8 +1,9 @@
+import dotenv from "dotenv"
+
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import dotenv from "dotenv"
-dotenv.config()
+
 import App from "./App";
 import rootReducer from "../src/store/reducers/rootReducer.js";
 import reportWebVitals from "./reportWebVitals";
@@ -13,6 +14,7 @@ import thunk from "redux-thunk";
 import { ReactReduxFirebaseProvider, getFirebase } from "react-redux-firebase";
 import { createFirestoreInstance, getFirestore, reduxFirestore } from "redux-firestore";
 import fbconfig from "../src/config/fbconfig.js";
+dotenv.config()
 const store = createStore(
   rootReducer,
   compose(

@@ -1,5 +1,5 @@
 import firebase from "firebase/compat/app";
-import "firebase/firestore";
+import "firebase/compat/firestore";
 import dotenv from "dotenv"
 dotenv.config()
 
@@ -14,6 +14,6 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+ firebase.initializeApp(firebaseConfig);
 
-export default firebaseConfig;
+export default firebase;
