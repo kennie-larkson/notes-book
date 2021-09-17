@@ -1,20 +1,26 @@
 import React from "react";
-import {deleteNote} from "../../store/actions/noteAction.js"
+import {deleteNote, toggleFaveNote} from "../../store/actions/noteAction.js"
 import { useDispatch} from "react-redux"
 
 const Note = ({ note }) => {
   const dispatch = useDispatch()
 
-  const deleteNoteHnadler = () => {
+  const deleteNoteHandler = () => {
     dispatch(deleteNote(note))
   }
+
+  const favNoteHandler = () => {
+    dispatch(toggleFaveNote(note))
+  }
+
+  const heartMarkup = note.favorite? "favorite": "favorite_border"
   return (
     <div className="note white">
       <div className="right-align">
-        <i className="material-icons red-text" style={{ cursor: "pointer" }}>
-          favorite
+        <i className="material-icons red-text" style={{ cursor: "pointer" }} onClick={favNoteHandler}>
+          {heartMarkup} 
         </i>
-        <i className="material-icons" style={{ cursor: "pointer" }} onClick={deleteNoteHnadler}>
+        <i className="material-icons" style={{ cursor: "pointer" }} onClick={deleteNoteHandler}>
           delete
         </i>
       </div>

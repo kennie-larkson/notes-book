@@ -34,4 +34,21 @@ export const deleteNote = (note) => {
   };
 };
 
+export const toggleFaveNote = (note) => {
+  return (dispatch, getState, { getFirestore }) => {
+    const favstatus = !note.favorite
+    const firestore = getFirestore();
+    firestore
+      .collection("notes")
+      .doc(note.id)
+      .update({ favorite: favstatus})
+      .then(() => {
+        console.log("this is your favorite note");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+};
+
 export default addNote;
