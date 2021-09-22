@@ -7,7 +7,7 @@ function App() {
   return (
     <Router>
       <Route>
-        <Navbar />
+        <Navbar title="KennieNoteBook" />
       </Route>
       <Switch>
         <Route exact path="/" component={Home} />
