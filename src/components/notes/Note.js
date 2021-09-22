@@ -26,7 +26,8 @@ const Note = ({ note }) => {
         </i>
       </div>
       <h5 className="black-text">{note.title}</h5>
-      <p className="truncate">{note.content}</p>
+      <p >{note.content}</p>
+      {/* <p className="truncate">{note.content}</p> */}
       <p className="grey-text">{moment(note.createdAt.toDate()).fromNow()}</p>
       <div className="right-align">
         <i className="material-icons black-text" style={{ cursor: "pointer" }}>edit</i>
