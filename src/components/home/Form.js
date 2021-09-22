@@ -10,10 +10,16 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ title, content })
-    dispatch(addNote({ title, content }))
+    
+    if(title && content) {
+      dispatch(addNote({ title, content }))
     resetTitle();
     resetContent();
+    }else {
+      return null
+    }
+    
+    
   };
   return (
     <div className="session">
